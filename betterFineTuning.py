@@ -45,7 +45,6 @@ def read_args():
 def main():
 
 	conf = pyspark.SparkConf()
-	conf.setAll([('spark.executor.memory', '8g'), ('spark.executor.cores', '3'), ('spark.cores.max', '3'), ('spark.driver.memory','8g'), ('spark.task.cpus', '1')])
 	sc = pyspark.SparkContext(conf=conf)
 	spark = pyspark.sql.SparkSession(sc)
 
