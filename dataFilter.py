@@ -36,7 +36,7 @@ def main():
 		df = spark.read.json(data_path) \
 					.repartition(500, "article_id")
 	
-		df = df.drop("labels", "section_names", "sections")
+		df = df.drop("labels", "section_names", "sections", "LEDtokenizer", "PXtokenizer")
 	
 		df = df.withColumn("abstract", F.concat_ws(" ", F.col("abstract_text"))).withColumn("abstract", F.regexp_replace("abstract", "<\/?S>", "")).drop("abstract_text").withColumn("article_text", F.concat_ws(" ", F.col("article_text")))
 
