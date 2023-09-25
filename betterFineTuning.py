@@ -57,7 +57,6 @@ def main():
 	data_prefixes = ['train', 'val', 'test']
 	data_paths = [train_data, val_data, test_data]
 	
-	data_path = os.path.join(args.data_root, 'train.txt')
 	task_output_dir = os.path.join(args.data_root, "processed/betterFineTuning")
 	if not os.path.exists(task_output_dir):
 		os.makedirs(task_output_dir)
